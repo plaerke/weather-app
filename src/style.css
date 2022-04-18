@@ -121,3 +121,8 @@ hr {
 .next-days-weather-icon {
   padding: 20px 0;
 }
+.code-link {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
