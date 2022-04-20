@@ -37,7 +37,7 @@ if (hours < 10) {
   minutes = `0${minutes}`
 }
 
-  return `${day} ${date}/${month} @ ${hours}:${minutes}`
+  return `${day} ${date}/${month} at ${hours}:${minutes}`
 }
 
 let currentDate = new Date();

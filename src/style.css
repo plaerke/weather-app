@@ -6,15 +6,15 @@ body {
 }
 h1 {
   font-weight: 200;
-  font-size: 30px;
+  font-size: 26px;
   margin-bottom: 10px;
 }
 h2 {
-  font-size: 45px;
+  font-size: 36px;
   font-weight: 800;
   color: #4daff9;
   position: relative;
-  top: 20px;
+  top: 4px;
 }
 h3 {
   color: #4daff9;
@@ -29,11 +29,19 @@ hr {
 }
 .body-box {
   background-color: white;
-  width: 90%;
+  width: 700px;
   display: block;
   margin: 0 auto;
   margin-top: 40px;
-  padding: 70px;
+  padding: 60px;
+}
+.date-time {
+  font-size: 12px;
+  color: gray;
+  text-align: right;
+  position: relative;
+  top: 12px;
+  right: 28px;
 }
 .search-button {
   padding: 6px 12px;
@@ -100,10 +108,6 @@ hr {
 }
 .condition-and-wind {
   font-size: 13px;
-}
-.date-time {
-  font-size: small;
-  color: gray;
 }
 .next-days {
   border: solid 2px aliceblue;
