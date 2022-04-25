@@ -70,8 +70,8 @@ hr {
 }
 .weather-icon {
   position: relative;
-  top: -26px;
-  right: 24px;
+  top: -10px;
+  right: -6px;
 }
 .temp-wind {
   position: relative;
@@ -101,6 +101,10 @@ hr {
 .condition-and-wind {
   font-size: 13px;
 }
+.condition-and-wind strong {
+  position: relative;
+  left: -12px;
+}
 .date-time {
   font-size: 12px;
   color: gray;
@@ -111,6 +115,9 @@ hr {
 .forecast-boxes {
   padding: 4px;
 }
+.forecast strong {
+  color: black;
+}
 .next-days {
   border: solid 1px #f8ebe6;
   border-radius: 4px;
@@ -118,7 +125,11 @@ hr {
   margin: 7px 0px;
   text-align: center;
   color: gray;
-  background-color: #fffaf8;
+  background: linear-gradient(
+    109.6deg,
+    rgb(223, 234, 247) 11.2%,
+    rgb(244, 248, 252) 91.1%
+  );
   transition: all 150ms ease-in-out;
 }
 .next-days:hover {

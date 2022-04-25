@@ -47,52 +47,50 @@
             </div>
           </form>
         </header>
-        <br />
         <div class="city-result">
+          <h2 id="show-city"></h2>
           <div class="row">
-            <div class="col-7">
-              <h2 id="show-city"></h2>
-            </div>
-            <div class="col-5">
-              <div class="row">
-                <div class="col-5 weather-icon">
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-                    alt="weather icon"
-                    id="icon"
-                    width="110"
-                  />
-                </div>
-                <div class="col-7 temp-wind">
-                  <div class="row">
-                    <span class="current-temperature">
-                      <span class="only-temp" id="current-temperature"></span>
-                      <span class="units">
-                        <a
-                          href="#"
-                          class="celsius-temperature active"
-                          id="celsius-link"
-                          >°C
-                        </a>
-                        |
-                        <a
-                          href="#"
-                          class="fahrenheit-temperature"
-                          id="fahrenheit-link"
-                          >°F</a
-                        >
-                      </span>
+            <div class="row">
+              <div class="col-3 weather-icon">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt="weather icon"
+                  id="icon"
+                  width="110"
+                />
+              </div>
+              <div class="col-9 temp-wind">
+                <div class="row">
+                  <span class="current-temperature">
+                    <span class="only-temp" id="current-temperature"></span>
+                    <span class="units">
+                      <a
+                        href="#"
+                        class="celsius-temperature active"
+                        id="celsius-link"
+                        >°C
+                      </a>
+                      |
+                      <a
+                        href="#"
+                        class="fahrenheit-temperature"
+                        id="fahrenheit-link"
+                        >°F</a
+                      >
                     </span>
-                  </div>
-                  <div class="condition-and-wind">
-                    <div class="row" id="current-condition"></div>
-                    <div class="row" id="current-wind"></div>
-                  </div>
+                  </span>
+                </div>
+                <div class="condition-and-wind">
+                  <div
+                    class="row current-condition"
+                    id="current-condition"
+                  ></div>
+                  <div class="row" id="current-wind"></div>
                 </div>
               </div>
             </div>
           </div>
-          <div id="forecast"></div>
+          <div class="forecast" id="forecast"></div>
         </div>
         <div class="date-time" id="current-time"></div>
       </div>

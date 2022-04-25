@@ -17,11 +17,12 @@ function formatDate(timestamp) {
   return `Last updated on ${day} ${hours}:${minutes}`;
 }
 
-function displayForecast(){
+function displayForecast(response){
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat"];
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
   days.forEach(function(day){
     forecastHTML = forecastHTML +
       `
@@ -44,19 +45,25 @@ function displayForecast(){
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates){
+  let apiKey = "05a453d2c06a99051e321b8b98d3ef67";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showCityWeather(response){
   celsiusTemperature = response.data.main.temp;
   document.querySelector("#show-city").innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   document.querySelector("#current-temperature").innerHTML = Math.round(celsiusTemperature);
-  document.querySelector("#current-condition").innerHTML = response.data.weather[0].main;
-  document.querySelector("#current-wind").innerHTML = `Windspeed ${Math.round(response.data.wind.speed)} m/s`;
+  document.querySelector("#current-condition").innerHTML = `<strong>${response.data.weather[0].main}</strong>`;
+  document.querySelector("#current-wind").innerHTML = `Windspeed: ${Math.round(response.data.wind.speed)} m/s`;
   iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   )
   document.querySelector("#current-time").innerHTML = formatDate(response.data.dt * 1000);
-  
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -124,4 +131,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("New York");
-displayForecast();
