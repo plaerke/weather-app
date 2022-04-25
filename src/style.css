@@ -65,9 +65,9 @@ hr {
   margin-top: 50px;
 }
 .weather-icon {
-  font-size: 82px;
   position: relative;
-  top: -14px;
+  top: -26px;
+  right: 24px;
 }
 .temp-wind {
   position: relative;

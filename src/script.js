@@ -46,11 +46,15 @@ let currentTimeDisplay = document.querySelector("#current-time");
 currentTimeDisplay.innerHTML = formatDate(currentDate);
 
 function showCityWeather(response){
-  console.log(response.data);
   document.querySelector("#show-city").innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   document.querySelector("#current-temperature").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#current-condition").innerHTML = response.data.weather[0].main;
   document.querySelector("#current-wind").innerHTML = `Windspeed ${Math.round(response.data.wind.speed)} m/s`;
+  iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  )
 }
 
 function search(city) {
@@ -81,12 +85,10 @@ function logPosition(position) {
   let units = "metric";
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
   let apiUrl = `${apiEndpoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(showCityWeather);
 }
 
 function handleCurrentLocation(event) {
-  debugger;
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(logPosition);
 }
