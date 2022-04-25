@@ -84,20 +84,17 @@ hr {
   left: -13px;
 }
 .celsius-temperature {
-  color: black;
   text-decoration: none;
-  transition: all 150ms ease-in-out;
-}
-.celsius-temperature:hover {
-  text-decoration: underline;
 }
 .fahrenheit-temperature {
   text-decoration: none;
-  transition: all 150ms ease-in-out;
 }
-.fahrenheit-temperature:hover {
-  text-decoration: underline;
+.units .active {
+  color: black;
+  text-decoration: none;
+  cursor: default;
 }
+
 .condition-and-wind {
   font-size: 13px;
 }
