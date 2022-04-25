@@ -12,18 +12,18 @@ let days = [
 let day = days[currentDate.getDay()];
 
 let months = [
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "10",
-  "11",
-  "12"
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
 ];
 let month = months[currentDate.getMonth()];
 
@@ -36,8 +36,9 @@ if (hours < 10) {
   if (minutes < 10) {
   minutes = `0${minutes}`
 }
+let year = currentDate.getYear();
 
-  return `${day} ${date}/${month} at ${hours}:${minutes}`
+  return `Last updated: ${day} ${hours}:${minutes}`
 }
 
 let currentDate = new Date();
